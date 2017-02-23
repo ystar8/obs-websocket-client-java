@@ -154,10 +154,6 @@ public class ApiCmd {
 			send("GetSceneList", null, callback);
 	}
 	
-	/**场景排序服务端还没有实现**/
-	public void SetSourceOrder(){
-		
-	}
 	/**
 	 * 是否显示给予某个源
 	  * @param sourceName {string} - Name of the source.
@@ -262,9 +258,23 @@ public class ApiCmd {
 		send("SetMute", args, callback);
 	}
 	
-	/**暂时为实现**/
-	public void GetVolumes(){
-		
+	/**移动选项位置**/
+	public void SetSceneItemPosition(String item,double x,double y,Function callback){
+		Map<String,Object> args = Maps.newHashMap();
+		args.put("item", item);
+		args.put("x", x);
+		args.put("y", y);
+		send("SetSceneItemPosition", args, callback);
+	}
+	
+	/**选项 xScale ,yScale 原始图片比例 rotation 旋转角度**/
+	public void SetSceneItemTransform(String item,double xScale , double yScale,double rotation,Function callback){
+		Map<String,Object> args = Maps.newHashMap();
+		args.put("item", item);
+		args.put("x-scale", xScale);
+		args.put("y-scale", yScale);
+		args.put("rotation", rotation);
+		send("SetSceneItemTransform", args, callback);
 	}
 	
 	/**设置当前 profilename**/

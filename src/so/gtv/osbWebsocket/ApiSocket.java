@@ -44,6 +44,8 @@ public class ApiSocket {
 						} else {
 							System.out.println("验证成功.");
 							as.onAuthenticationSuccess();
+							//api.SetSceneItemPosition("图像", 10, 10, null);
+							api.SetSceneItemTransform("图像",4, 3, 0, null);
 //							api.GetCurrentProfile(new Function(){
 //								@Override
 //								public void call(JSONObject data) {
